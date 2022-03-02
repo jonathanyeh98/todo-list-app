@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        <div>
+            Incomplete Items
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table" *ngIf="toDoListI.length">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Priority</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let toDo of toDoListI">
+                    <td>
+                        <a [routerLink]="['/incomplete',toDo.id]">{{toDo.title}}</a>
+                    </td>
+                    <td>{{toDo.priority}}</td>
+                    <td>
+                        <button class="btn btn-primary"
+                            (click)="onComplete(toDo)">
+                            Complete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!toDoListI.length">
+            All items are complete!
+        </div>
+    </div>
+</div>

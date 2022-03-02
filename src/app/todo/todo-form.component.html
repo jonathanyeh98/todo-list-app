@@ -1,0 +1,56 @@
+<form novalidate
+      (ngSubmit)="save()"
+      [formGroup]='todoForm'>
+<div class="card">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <div class="mb-3">
+                <label for="titleInput" 
+                    class="form-label">
+                    Task Name
+                </label>
+                <input type="text" 
+                    class="form-control" 
+                    id="titleInput"
+                    placeholder="(required)"
+                    required
+                    formControlName="title"/>
+            </div>
+            <div class="mb-3">
+                <label for="descriptionInput" class="form-label">Task Description</label>
+                <input type="text" 
+                    class="form-control" 
+                    id="descriptionInput" 
+                    placeholder="(required)" 
+                    required
+                    formControlName="description"/>
+            </div>
+            <div class="mb-3">
+                <label for="priorityDropDown" class="form-label">Task Priority</label>
+                <select class="form-select form-select mb-3" aria-label=".form-select example" id="priorityDropDown" required formControlName="priority">
+                    <option value="low">Low</option>
+                    <option value="mid">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-outline-secondary"
+            style="width:80px"
+            (click)="onBack()">
+            <i class="'fa fa-cheveron-left"></i> Back
+        </button>
+        <button class="btn btn-primary"
+            type="submit"
+            style="width:80px"
+            [title]="todoForm.valid ? 'Save your entered data' : 'Saving disabled until form is valid'"
+            [disabled]="!todoForm.valid">
+            Ok
+        </button>
+    </div>
+</div>
+</form>

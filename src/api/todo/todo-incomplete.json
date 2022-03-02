@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Water the cat",
+        "description": "I need to go home to water my cat",
+        "priority": "high"
+    },
+    {
+        "id": 2,
+        "title": "Cool down the fridge",
+        "description": "Fridge is too warm, needs cooling",
+        "priority": "mid"
+    },
+    {
+        "id": 3,
+        "title": "Eat grandma",
+        "description": "Lets eat grandma",
+        "priority": "low"
+    }
+]
